@@ -1,13 +1,13 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavDropdownExample from './components/NavBar';
-import CartWidget from './components/CartWidget';
+import Greeting from './components/ItemListContainer';
 
 function App() {
   return (
       <header className="App-header row justify-content-start ml-3">
         <NavDropdownExample/>
-        <CartWidget/>
+        <Greeting saludo="Hola Mundo"/>
       </header>
   );
 }

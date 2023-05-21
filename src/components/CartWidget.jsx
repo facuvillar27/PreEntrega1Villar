@@ -1,12 +1,14 @@
-import '../App.css'
+import Carrito from "../Logoferreteria.svg"
 
-function CartWidget () {
-
+function CartWidget() {
     return (
+        
+    <div>
         <div>
-            <div><img src="../Logoferreteria.svg" alt="" /></div>
-            <div>5</div>
+            <img src={Carrito} id="CarritoImagen" alt="Carrito" />
+            5
         </div>
+    </div>
     )
 }
 

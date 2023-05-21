@@ -1,5 +1,6 @@
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import CartWidget from './CartWidget';
 
 function NavDropdownExample() {
   const handleSelect = (eventKey) => alert(`selected ${eventKey}`);
@@ -11,6 +12,7 @@ function NavDropdownExample() {
         <NavDropdown.Item eventKey="4.2">Pinturas action</NavDropdown.Item>
         <NavDropdown.Item eventKey="4.3">Ferretería</NavDropdown.Item>
       </NavDropdown>
+      <CartWidget/>
     </Nav>
   );
 }
