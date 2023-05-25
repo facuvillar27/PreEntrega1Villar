@@ -1,0 +1,57 @@
+.counter {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    align-self: center;
+    height: 50px;
+    font-size: 20px;
+}
+
+.counterNumbers button {
+    background-color: white;
+    border-width: 0px;
+    color: rgb(65, 101, 112);
+
+}
+
+.counterNumbers {
+    background-color: white;
+    color: rgb(65, 101, 112);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    margin-right: 10px;
+    border: 2px solid rgb(65, 101, 112);
+    border-radius: 10px;
+}
+
+.counterNumbers button {
+    margin: 0px 10px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.counterNumbers span {
+    color: black;
+}
+
+.agregarAlCarrito {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    align-items: center;
+    margin-right: 10px;
+    border: 2px solid rgb(65, 101, 112);
+    border-radius: 10px;
+    font-size: 20px;
+    width: 200px;
+}
+
+.agregarAlCarrito button {
+    background-color: rgba(255, 255, 255, 0);
+    border-width: 0px;
+    color: rgb(65, 101, 112);
+}
