@@ -27,6 +27,7 @@
 
 .carritoCounter {
   display: flex;
+  align-items: center;
 }
 
 footer {
