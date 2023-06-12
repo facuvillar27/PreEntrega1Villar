@@ -1,11 +1,11 @@
-import { ItemList } from '../../components/itemList';
+import { ItemListConteiner } from '../../components/itemListConteiner';
 import './index.css';
 
 const Home = () => {
   return (
     <>
       <main>
-        <ItemList/>
+        <ItemListConteiner />
       </main>
     </>
   );

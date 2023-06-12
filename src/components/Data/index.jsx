@@ -9,7 +9,7 @@ export const getItems = async () => {
             price: 10,
             stock: 10,
             category: 'Herramientas',
-            pictureUrl: require("../../img/martillo.png").default, // Utiliza 'require' para importar la imagen
+            pictureUrl: "https://sodimac.scene7.com/is/image/SodimacUruguay/2570386?fmt=jpg&fit=fit,1&wid=200&hei=200",
         },
         {
             id: 2,
@@ -18,7 +18,7 @@ export const getItems = async () => {
             price: 10,
             stock: 10,
             category: 'Herramientas',
-            pictureUrl: 'image2.jpg'
+            pictureUrl: 'https://sodimac.scene7.com/is/image/SodimacUruguay/2570386?fmt=jpg&fit=fit,1&wid=200&hei=200'
         },
         {
             id: 3,
@@ -27,7 +27,7 @@ export const getItems = async () => {
             price: 10,
             stock: 10,
             category: 'Herramientas',
-            pictureUrl: 'image3.jpg'
+            pictureUrl: 'https://sodimac.scene7.com/is/image/SodimacUruguay/2570386?fmt=jpg&fit=fit,1&wid=200&hei=200'
         },
         {
             id: 4,
@@ -36,7 +36,7 @@ export const getItems = async () => {
             price: 10,
             stock: 10,
             category: 'Pinturas',
-            pictureUrl: require("../../img/martillo.png").default, // Utiliza 'require' para importar la imagen
+            pictureUrl: "https://sodimac.scene7.com/is/image/SodimacUruguay/2679973?fmt=jpg&fit=fit,1&wid=200&hei=200"
         },
         {
             id: 5,
@@ -45,7 +45,7 @@ export const getItems = async () => {
             price: 10,
             stock: 10,
             category: 'Pinturas',
-            pictureUrl: require("../../img/martillo.png").default, // Utiliza 'require' para importar la imagen
+            pictureUrl: "https://sodimac.scene7.com/is/image/SodimacUruguay/2679973?fmt=jpg&fit=fit,1&wid=200&hei=200"
         },
         {
             id: 6,
@@ -54,7 +54,34 @@ export const getItems = async () => {
             price: 10,
             stock: 10,
             category: 'Pinturas',
-            pictureUrl: require("../../img/martillo.png").default, // Utiliza 'require' para importar la imagen
+            pictureUrl: "https://sodimac.scene7.com/is/image/SodimacUruguay/2679973?fmt=jpg&fit=fit,1&wid=200&hei=200"
+        },
+        {
+            id: 7,
+            title: 'Item 7',
+            description: 'Description 7',
+            price: 10,
+            stock: 10,
+            category: 'Materiales',
+            pictureUrl: "https://sodimac.scene7.com/is/image/SodimacUruguay/1939130?fmt=jpg&fit=fit,1&wid=200&hei=200"
+        },
+        {
+            id: 8,
+            title: 'Item 8',
+            description: 'Description 8',
+            price: 10,
+            stock: 10,
+            category: 'Materiales',
+            pictureUrl: "https://sodimac.scene7.com/is/image/SodimacUruguay/1939130?fmt=jpg&fit=fit,1&wid=200&hei=200"
+        },
+        {
+            id: 9,
+            title: 'Item 9',
+            description: 'Description 9',
+            price: 10,
+            stock: 10,
+            category: 'Materiales',
+            pictureUrl: "https://sodimac.scene7.com/is/image/SodimacUruguay/1939130?fmt=jpg&fit=fit,1&wid=200&hei=200"
         },
     ];
 

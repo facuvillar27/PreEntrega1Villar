@@ -1,0 +1,24 @@
+.mainFiltered {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #442020;  
+}
+
+.box {
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 15px;
+    margin: 20px;
+    padding: 20px;
+    align-items: center;
+}
+
+.info {
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid rgb(65, 101, 112);
+}

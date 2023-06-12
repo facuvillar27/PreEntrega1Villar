@@ -1,5 +1,5 @@
 import "../App.css"
-import ItemCount from "./ItemCount"
+import ItemCount from "."
 
 function Counter(props) {
     return (

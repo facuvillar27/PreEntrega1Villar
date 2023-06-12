@@ -16,12 +16,23 @@
     margin: 20px;
     align-items: center;
     width: 250px;
-    height: 750px;
+    height: 550px;
 }
 
 .button-container {
-    margin-top: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+.volverATienda {
+    border-radius: 10px;
+    background-color: white;
+    border: 2px solid rgb(65, 101, 112);
+}
+
+.linkVolverATienda {
+    text-decoration: none;
+    color: rgb(65, 101, 112);
+}
+

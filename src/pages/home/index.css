@@ -19,3 +19,10 @@ main {
 header {
     display: none;
 }
+
+.imgHeader {
+    filter: invert(100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}

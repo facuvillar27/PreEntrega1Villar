@@ -26,7 +26,7 @@ const Item = () => {
       <div className="itemDetail">
         <div className="box-item" key={product.id}>
           <div className="imgen">
-            <img src="https://sodimac.scene7.com/is/image/SodimacUruguay/1009249" alt="" />
+            <img src={product.pictureUrl} alt="" />
           </div>
           <h2 className="productTitle">
             {product.title}
