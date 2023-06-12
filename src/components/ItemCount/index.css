@@ -1,6 +1,6 @@
 .counter {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-content: space-between;
     align-self: center;
     height: 50px;
@@ -11,7 +11,6 @@
     background-color: white;
     border-width: 0px;
     color: rgb(65, 101, 112);
-
 }
 
 .counterNumbers {
@@ -22,7 +21,7 @@
     justify-content: space-between;
     align-items: center;
     width: 200px;
-    margin-right: 10px;
+    margin: 10px 0px;
     border: 2px solid rgb(65, 101, 112);
     border-radius: 10px;
 }
@@ -43,7 +42,7 @@
     justify-content: center;
     background-color: white;
     align-items: center;
-    margin-right: 10px;
+    margin: 0px 0px 10px 0px;
     border: 2px solid rgb(65, 101, 112);
     border-radius: 10px;
     font-size: 20px;
@@ -53,5 +52,15 @@
 .agregarAlCarrito button {
     background-color: rgba(255, 255, 255, 0);
     border-width: 0px;
+    color: rgb(65, 101, 112);
+}
+
+.volverATienda {
+    border-radius: 30px;
+    background-color: white;
+}
+
+.linkVolverATienda {
+    text-decoration: none;
     color: rgb(65, 101, 112);
 }

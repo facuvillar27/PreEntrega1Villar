@@ -1,0 +1,21 @@
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #442020;
+}
+
+.imgen {
+    display: flex;
+    transform: scale(0.5);
+    margin: 10px;
+}
+
+.box div img {
+    border-radius: 30px;
+}
+
+header {
+    display: none;
+}

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import '../itemCount.css';
+import './index.css';
+import { Link } from 'react-router-dom';
+import { Home } from '../../pages/home';
 
 function ItemCount ({ stock, initial, onAdd }) {
     const [count, setCount] = useState(initial);
@@ -35,6 +37,11 @@ function ItemCount ({ stock, initial, onAdd }) {
             <div className='agregarAlCarrito'>
                 <button onClick={handleAddToCart}>Agregar al carrito</button>
             </div>
+            <button className="volverATienda" onClick={Home}>
+                <Link to="/" className='linkVolverATienda'>
+                  Volver a la tienda
+                </Link>
+            </button>
         </div>
     )
 

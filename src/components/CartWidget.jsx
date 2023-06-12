@@ -1,10 +1,10 @@
-import Carrito from "../Logoferreteria.svg"
+import Carrito from "../Carrito.svg"
 
 function CartWidget() {
     return (
         
     <div>
-        <div>
+        <div className="carritoCounter">
             <img src={Carrito} id="CarritoImagen" alt="Carrito" />
             5
         </div>

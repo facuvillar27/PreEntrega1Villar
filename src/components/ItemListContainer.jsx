@@ -1,13 +1,12 @@
 import "../App.css"
-import ItemCount from "./itemCount"
+import ItemCount from "./ItemCount"
 
-function Greeting(props) {
+function Counter(props) {
     return (
         <div>
-            <h1>{ props.saludo }</h1>
             <ItemCount stock={5} initial={1} />
         </div>
     )
 }
 
-export default Greeting
+export default Counter
