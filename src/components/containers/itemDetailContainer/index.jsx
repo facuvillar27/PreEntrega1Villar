@@ -1,32 +1,33 @@
-import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react";
-import { getItemById } from "../Data";
 import './index.css'
-import ItemCount from "../ItemCount";
+import { ItemCount } from "../../itemCount";
+import { useParams } from "react-router-dom";
+import { getProduct } from "../../../services/firebase/producto";
 
 const Item = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const [productSelected, setProductSelected] = useState(null);
 
   useEffect(() => {
-    const fetchProduct = async () => {
-      const product = await getItemById(id);
-      setProduct(product);
-    };
+    getProduct(id).then((data) => {
+        setProduct(data)
+        setProductSelected(data.id);
+    })
+}, [id])
 
-    fetchProduct();
-  }, [id]);
 
   if (!product) {
     return <div>Loading...</div>;
-  }
+  }  
+
 
   return (
     <>
       <div className="itemDetail">
         <div className="box-item" key={product.id}>
           <div className="imgen">
-            <img src={product.pictureUrl} alt="" />
+            <img src={product.url} alt="" />
           </div>
           <h2 className="productTitle">
             {product.title}
@@ -41,7 +42,14 @@ const Item = () => {
             {product.description}
           </p>
           <div className="button-container">
-            <ItemCount stock={product.stock} initial={1}/>
+            <ItemCount 
+              stock={product.stock}
+              initial={1}
+              title={product.title}
+              price={product.price}
+              category={product.category}
+              id={product.id}
+            />
           </div>
         </div>
       </div>

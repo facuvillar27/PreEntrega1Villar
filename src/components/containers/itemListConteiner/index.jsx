@@ -1,34 +1,24 @@
 import { useEffect, useState } from "react"
-import { getItems } from "../Data"
 import './index.css'
 import { Link, useLocation } from "react-router-dom"
+import { getProducts } from "../../../services/firebase/productos"
 
-const ItemListConteiner = () => {
+const ItemListConteiner = ({id, title, description, price, stock}) => {
 
     const [products, setProducts] = useState([])
-    const [loading, setLoading] = useState(true)
     const currentLocation = useLocation()
 
     useEffect(() => {
-        const fetchData = () => {
-            getItems()
-                .then((fetchedProducts) => {
-                    setProducts(fetchedProducts);
-                    setLoading(false);
-                })
-                .catch((error) => {
-                    console.error("Error fetching products:", error);
-                });
-        };
+        getProducts().then((data) => {
+            setProducts(data)
+        })
+    }, [])
 
-        fetchData();
-    }, []);
-
-    if (loading) {
+    if (!products) {
         return <div>Loading...</div>;
-    }
+    }  
 
-    let filteredProducts = products;
+    let filteredProducts = products
 
     if (currentLocation.pathname === "/herramientas") {
         filteredProducts = products.filter((product) => product.category === "Herramientas");
@@ -44,11 +34,10 @@ const ItemListConteiner = () => {
     return (
         <>
             <div className="mainFiltered">
-
                 {filteredProducts.map((product) => (
                     <div className="box" key={product.id}>
                         <div className="imgen">
-                            <img src={ product.pictureUrl } alt="" />
+                            <img src={ product.url } alt="" />
                         </div>
                         <h2 className="productTitle">
                             {product.title}

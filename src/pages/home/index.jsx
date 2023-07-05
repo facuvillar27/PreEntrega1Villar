@@ -1,4 +1,4 @@
-import { ItemListConteiner } from '../../components/itemListConteiner';
+import { ItemListConteiner } from '../../components/containers/itemListConteiner';
 import './index.css';
 
 const Home = () => {

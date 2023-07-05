@@ -1,8 +1,8 @@
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
-import homeLogo from '../img/home.png'
+import homeLogo from '../../img/home.png'
+import { CartWidget } from './CartWidget';
 
 function NavDropdownExample() {
   const handleSelect = (eventKey) => alert(`selected ${eventKey}`);
@@ -25,9 +25,9 @@ function NavDropdownExample() {
             <Link to="/materiales"> Materiales </Link>
         </NavDropdown.Item>
       </NavDropdown>
-      <CartWidget/>
+      <CartWidget />
     </Nav>
   );
 }
 
-export default NavDropdownExample;
+export { NavDropdownExample }

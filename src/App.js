@@ -2,30 +2,30 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Home } from './pages/home';
-import NavDropdownExample from './components/NavBar';
-import { Item } from './components/itemDetailContainer';
-import { ItemListConteiner } from './components/itemListConteiner';
-
+import { ItemListConteiner } from './components/containers/itemListConteiner';
+import { Item } from './components/containers/itemDetailContainer';
+import { CartListContainer } from './components/containers/cartListContainer';
+import { CartCounterProvider } from './context/cartCounter';
+import { HeaderComponent } from './pages/header';
+import { FooterComponent } from './pages/footer';
+import { app } from './services/firebase/firebase'
 
 function App() {
   
   return (
     <>
-      <BrowserRouter>
-      <header className="App-header row justify-content-start ml-3">
-        <NavDropdownExample/>
-      </header>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/item/:id' element={<Item />} />
-          <Route path='/:category' element={<ItemListConteiner />} />
-        </Routes>
-      </BrowserRouter>
-      <footer>
-        <h4>
-          TODOS LOS DERECHOS RESERVADOS FACUNDO VILLAR 
-        </h4>
-      </footer>
+      <CartCounterProvider>
+        <BrowserRouter>
+          <HeaderComponent />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/item/:id' element={<Item />} />
+            <Route path='/:category' element={<ItemListConteiner />} />
+            <Route path='/cart' element={<CartListContainer />} />
+          </Routes>
+        </BrowserRouter>
+        <FooterComponent />
+      </CartCounterProvider>
     </>
   );
 }
