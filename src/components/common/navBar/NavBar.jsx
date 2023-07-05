@@ -1,8 +1,8 @@
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
-import homeLogo from '../../img/home.png'
-import { CartWidget } from './CartWidget';
+import homeLogo from '../../../img/home.png'
+import { CartWidget } from '../cartWidget/CartWidget';
 
 function NavDropdownExample() {
   const handleSelect = (eventKey) => alert(`selected ${eventKey}`);

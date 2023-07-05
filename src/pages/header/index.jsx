@@ -1,4 +1,4 @@
-import { NavDropdownExample } from "../../components/common/NavBar"
+import { NavDropdownExample } from "../../components/common/navBar/NavBar"
 
 const HeaderComponent = () => {
 

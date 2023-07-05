@@ -49,6 +49,7 @@ const Item = () => {
               price={product.price}
               category={product.category}
               id={product.id}
+              url={product.url}
             />
           </div>
         </div>

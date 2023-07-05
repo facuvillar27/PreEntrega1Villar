@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Home } from '../../pages/home';
 import { CartCounterContext } from '../../context/cartCounter';
 
-function ItemCount ({ stock, initial, onAdd, title, price, category, id }) {
+function ItemCount ({ stock, initial, onAdd, title, price, category, id, url, subtotal}) {
     const { addProductToCart } = useContext(CartCounterContext);
     const [count, setCount] = useState(initial);
     const [newStock, setNewStock] = useState(stock);
@@ -22,7 +22,7 @@ function ItemCount ({ stock, initial, onAdd, title, price, category, id }) {
     };
 
     const handleAddToCart = () => {
-        addProductToCart({title, price, category, id}, count)
+        addProductToCart({title, price, category, id, url}, count)
         setNewStock(prevStock => prevStock - count);
         if (onAdd) {
             onAdd(count);
