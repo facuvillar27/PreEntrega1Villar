@@ -18,7 +18,7 @@ const Item = () => {
 
 
   if (!product) {
-    return <div>Loading...</div>;
+    return <div className="loading">Loading...</div>;
   }  
 
 

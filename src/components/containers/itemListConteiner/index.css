@@ -6,8 +6,12 @@
     background-color: #442020;  
 }
 
+.spinnerMain {
+    display: flex;
+    justify-content: center;
+}
+
 .box {
-    display: inline-block;
     display: flex;
     flex-direction: column;
     background-color: white;

@@ -30,6 +30,11 @@
   align-items: center;
 }
 
+.carritoCounter div {
+  position: relative;
+  top: 4px;
+}
+
 footer {
   text-align: center;
   background-color: rgb(19, 4, 4);

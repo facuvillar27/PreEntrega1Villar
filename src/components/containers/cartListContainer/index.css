@@ -1,4 +1,8 @@
-.cartList{
+.cartMain {
+    background-color: #442020;
+}
+
+.cartList {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -26,6 +30,17 @@
 
 .cartList td:nth-child(1) {
     width: 20%;
+}
+
+.cartList td, th {
+    font-size: 32px;
+}
+
+.cartList button {
+    background-color: white;
+    border: 0px;
+    color: red;
+    font-size: 36px;
 }
 
 .cartTable2 {

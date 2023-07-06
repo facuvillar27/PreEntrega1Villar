@@ -15,7 +15,7 @@ function CartWidget() {
                 <Link to="/cart">
                     <img src={Carrito} id="CarritoImagen" alt="Carrito" />
                 </Link>
-                <h2>{cartCount}</h2>
+                <div>{cartCount}</div>
             </div>
         </div>
     )

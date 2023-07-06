@@ -3,9 +3,15 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import homeLogo from '../../../img/home.png'
 import { CartWidget } from '../cartWidget/CartWidget';
+import { useContext } from 'react';
+import { CartCounterContext } from '../../../context/cartCounter';
 
 function NavDropdownExample() {
   const handleSelect = (eventKey) => alert(`selected ${eventKey}`);
+
+  const { cartCount } = useContext(CartCounterContext)
+
+
 
   return (
     <Nav variant="pills" activeKey="1" onSelect={handleSelect}>
@@ -25,7 +31,7 @@ function NavDropdownExample() {
             <Link to="/materiales"> Materiales </Link>
         </NavDropdown.Item>
       </NavDropdown>
-      <CartWidget />
+      { cartCount > 0 && <CartWidget />}
     </Nav>
   );
 }

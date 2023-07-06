@@ -2,20 +2,27 @@ import { useEffect, useState } from "react"
 import './index.css'
 import { Link, useLocation } from "react-router-dom"
 import { getProducts } from "../../../services/firebase/productos"
+import CostumizedSpinner from "../../common/spinner";
 
 const ItemListConteiner = ({id, title, description, price, stock}) => {
 
     const [products, setProducts] = useState([])
     const currentLocation = useLocation()
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         getProducts().then((data) => {
             setProducts(data)
+            setIsLoading(false);
         })
     }, [])
 
-    if (!products) {
-        return <div>Loading...</div>;
+    if (isLoading) {
+        return (
+            <div className="spinnerMain">
+                <CostumizedSpinner/>
+            </div>
+        )
     }  
 
     let filteredProducts = products

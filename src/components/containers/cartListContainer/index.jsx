@@ -25,7 +25,7 @@ const CartListContainer = () => {
     }, [cart]);
 
     return (
-        <>
+        <div className="cartMain">
             <div className="cartList">
                 <h2>Carrito</h2>
 
@@ -56,14 +56,14 @@ const CartListContainer = () => {
                                 <td></td>
                                 <td></td>
                                 <td>Total a pagar </td>
-                                <td>{total}</td>
+                                <td>${total}</td>
                                 <td></td>
                             </tr>
                     </tbody>
                 </table>
             </div>
             <Form />
-        </>
+        </div>
     );
 }
 
