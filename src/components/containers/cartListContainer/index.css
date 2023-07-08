@@ -48,4 +48,10 @@
     background-color: white;
 }
 
+.xButton:hover {
+    background-color: #ac5e5e;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
 

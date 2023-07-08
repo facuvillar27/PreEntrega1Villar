@@ -21,6 +21,20 @@
     align-items: center;
 }
 
+.box button {
+    background-color: #e28c8c;
+}
+
+.box:hover {
+    background-color: #ac5e5e;
+    cursor: pointer;
+}
+
+.box button:hover {
+    background-color: white;
+    cursor: pointer;
+}
+
 .info {
     background-color: white;
     border-radius: 10px;

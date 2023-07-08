@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 const CartCounterContext = createContext()
 
@@ -6,26 +6,38 @@ const CartCounterProvider = ({ children }) => {
     const [cart, setCart] = useState([])
     const [cartCount, setCartCount] = useState(0)
 
+    useEffect(() => {
+        console.log(cart);
+      }, [cart]);
+    
     const addProductToCart = (product, quantity) => {
-        const subtotal = product.price*quantity;
+        const subtotal = product.price * quantity;
         setCartCount(prevCount => prevCount + quantity);
-
-        const existingProduct = cart.find(p => p.id === product.id);
-        if (existingProduct) {
-            const updatedCart = cart.map(p => {
-                if (p.id === product.id) {
-                    return { ...p, quantity: p.quantity + quantity, subtotal: p.subtotal + subtotal };
-                } else {
-                    return p;
-                }
+        
+        const existingProductIndex = cart.findIndex(p => p.id === product.id);
+        if (existingProductIndex !== -1) {
+            setCart(prevCart => {
+            const updatedCart = [...prevCart];
+            const existingProduct = updatedCart[existingProductIndex];
+            const newStock = existingProduct.upgradeStock - quantity
+            updatedCart[existingProductIndex] = {
+                ...existingProduct,
+                quantity: existingProduct.quantity + quantity,
+                subtotal: existingProduct.subtotal + subtotal,
+                upgradeStock: newStock
+              };
+            return updatedCart;
             });
-            
-            setCart(updatedCart);
-            return console.log("El producto ya se agregó al carrito");
-        }
-
-        setCart([...cart, { ...product, quantity, subtotal }]);
-    };
+        } else {
+            const updatedProduct = {
+                ...product,
+                quantity,
+                subtotal,
+                upgradeStock: product.stock - quantity
+            };
+            setCart(prevCart => [...prevCart, updatedProduct]);
+        };
+    }
 
     const removeProductFromCart = (item) => {
         const { id, quantity } = item;

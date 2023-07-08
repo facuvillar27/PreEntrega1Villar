@@ -1,11 +1,17 @@
 import { addDoc, collection, getFirestore } from "firebase/firestore"
 
 const createOrder = async (payload) => {
-    const db = getFirestore();
+    try {
 
-    const collectionRef = collection(db, "orders");
+        const db = getFirestore();
 
-    const response = await addDoc(collectionRef, payload);
+        const collectionRef = collection(db, "orders");
+
+        const docRef = await addDoc(collectionRef, payload);
+        console.log("Order created with ID: ", docRef.id);
+    } catch (error) {
+        console.error("Error creating order: ", error);
+    }
 }
 
 export { createOrder }

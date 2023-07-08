@@ -48,7 +48,7 @@ const CartListContainer = () => {
                                 <td>{item.quantity}</td>
                                 <td>${item.price}</td>
                                 <td>${item.quantity * item.price}</td>
-                                <td><button onClick={() => removeProductFromCart(item)}>X</button></td>
+                                <td><button className="xButton" onClick={() => removeProductFromCart(item)}>X</button></td>
                             </tr>
                         ))}
                             <tr>

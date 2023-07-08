@@ -31,7 +31,7 @@ form div h1 {
     font-size: 32px;
 }
 
-form button {
+.finalizarCompraButton {
     display: grid;
     justify-content: center;
     align-self: flex-end;
@@ -41,9 +41,10 @@ form button {
     border: 0px;
     border-radius: 20px;
     background-color: white;
+    color: black;
 }
 
-form button:hover {
+.finalizarCompraButton:hover {
     background-color: #ac5e5e;
     cursor: pointer;
 }

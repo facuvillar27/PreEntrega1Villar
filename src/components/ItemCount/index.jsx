@@ -4,13 +4,12 @@ import { Link } from 'react-router-dom';
 import { Home } from '../../pages/home';
 import { CartCounterContext } from '../../context/cartCounter';
 
-function ItemCount ({ stock, initial, onAdd, title, price, category, id, url}) {
+function ItemCount ({ stock, initial, title, price, category, id, url, upgradeStock}) {
     const { addProductToCart } = useContext(CartCounterContext);
     const [count, setCount] = useState(initial);
-    const [newStock, setNewStock] = useState(stock);
 
     const sumar = () => {
-        if (count < newStock) {
+        if (count < upgradeStock) {
             setCount(count + 1);
         }
     };
@@ -22,11 +21,7 @@ function ItemCount ({ stock, initial, onAdd, title, price, category, id, url}) {
     };
 
     const handleAddToCart = () => {
-        addProductToCart({title, price, category, id, url}, count)
-        setNewStock(prevStock => prevStock - count);
-        if (onAdd) {
-            onAdd(count);
-        }
+        addProductToCart({title, price, category, id, url, stock, upgradeStock}, count)
         setCount(1);
     };
 

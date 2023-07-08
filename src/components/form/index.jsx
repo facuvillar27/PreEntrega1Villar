@@ -45,7 +45,9 @@ const Form = () => {
           }, 0);
 
         createOrder( {
-            ...fields,
+            name: name,
+            email: email,
+            phone: phone,
             Date: serverTimestamp(),
             Total: total,
             products} );
@@ -93,7 +95,7 @@ const Form = () => {
                     />
                 </div>
             </div>
-            <button type="submit" disabled={!isFormValid} >Finalizar compra</button>
+            <button className="finalizarCompraButton" type="submit" disabled={!isFormValid} >Finalizar compra</button>
         </form>
     )
 };

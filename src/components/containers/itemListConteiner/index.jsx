@@ -1,14 +1,17 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import './index.css'
 import { Link, useLocation } from "react-router-dom"
 import { getProducts } from "../../../services/firebase/productos"
 import CostumizedSpinner from "../../common/spinner";
+import { CartCounterContext } from "../../../context/cartCounter";
 
-const ItemListConteiner = ({id, title, description, price, stock}) => {
+const ItemListConteiner = ({id, title, description, price, stock, upgradeStock}) => {
 
     const [products, setProducts] = useState([])
     const currentLocation = useLocation()
     const [isLoading, setIsLoading] = useState(true);
+    const [product, setProduct] = useState(null);
+    const { cart } = useContext(CartCounterContext);
 
     useEffect(() => {
         getProducts().then((data) => {
@@ -37,6 +40,15 @@ const ItemListConteiner = ({id, title, description, price, stock}) => {
         filteredProducts = products.filter((product) => product.category === "Materiales");
     }
 
+    const getProductStock = (product) => {
+        const cartProduct = cart.find(p => p.id === product.id);
+        if (cartProduct) {
+          return cartProduct.upgradeStock;
+        } else {
+          return product.stock;
+        }
+      };
+
 
     return (
         <>
@@ -53,7 +65,7 @@ const ItemListConteiner = ({id, title, description, price, stock}) => {
                             $ {product.price}
                         </h3>
                         <p>
-                            Quedan {product.stock} unidades
+                            Quedan {getProductStock(product)} unidades
                         </p>
                         <Link to={`/item/${product.id}`}>
                             <button className="info">
